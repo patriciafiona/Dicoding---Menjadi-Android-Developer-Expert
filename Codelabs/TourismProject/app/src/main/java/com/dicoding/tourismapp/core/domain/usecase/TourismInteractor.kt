@@ -1,6 +1,6 @@
 package com.dicoding.tourismapp.core.domain.usecase
 
-import com.dicoding.tourismapp.core.data.source.remote.ITourismRepository
+import com.dicoding.tourismapp.core.data.ITourismRepository
 import com.dicoding.tourismapp.core.domain.model.Tourism
 
 class TourismInteractor(private val tourismRepository: ITourismRepository): TourismUseCase {
