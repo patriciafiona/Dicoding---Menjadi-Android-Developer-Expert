@@ -6,7 +6,7 @@ import com.dicoding.tourismapp.core.data.source.local.room.TourismDao
 import io.reactivex.Flowable
 import kotlinx.coroutines.flow.Flow
 
-class LocalDataSource private constructor(private val tourismDao: TourismDao) {
+class LocalDataSource(private val tourismDao: TourismDao) {
 
     companion object {
         private var instance: LocalDataSource? = null
