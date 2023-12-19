@@ -12,22 +12,4 @@ import com.dicoding.tourismapp.core.data.source.local.entity.TourismEntity
 abstract class TourismDatabase : RoomDatabase() {
 
     abstract fun tourismDao(): TourismDao
-
-    companion object {
-        @Volatile
-        private var INSTANCE: TourismDatabase? = null
-
-        fun getInstance(context: Context): TourismDatabase =
-            INSTANCE ?: synchronized(this) {
-            val instance = Room.databaseBuilder(
-                context.applicationContext,
-                TourismDatabase::class.java,
-                "Tourism.db"
-            )
-                .fallbackToDestructiveMigration()
-                .build()
-            INSTANCE = instance
-            instance
-        }
-    }
 }
