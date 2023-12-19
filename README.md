@@ -55,6 +55,25 @@ Current version             : v1.0.2
 Project link                : [Repository link](https://github.com/patriciafiona/Dicoding---Belajar-Membuat-Aplikasi-Flutter-untuk-Pemula/tree/main/submission/financial_app)
 ```
 
+## Designs Inspiration
+<p align="center">
+  <img src="https://github.com/patriciafiona/Dicoding---Menjadi-Android-Developer-Expert/assets/32255348/4a6bf264-c2ee-4b24-ad53-340771318f2c" width="600"/>
+</p>
+<p align="center"><i><b>Figure 4</b> Dribbble design inspiration</i></p>
+
+If you like the app design, please give like to these designs as my submission app inspiration:
+- [Mobile Banking App by Mohammad Jabel](https://dribbble.com/shots/23155272-Mobile-Banking-App)
+- [Money Transferring App Concept by Eugene Machiavelli](https://dribbble.com/shots/23155272-Mobile-Banking-App)
+
+## My Project Result (will be fixed later...)
+
+<p align="center">
+   <img src="https://github.com/patriciafiona/JuaraAndroid/assets/32255348/1477a83d-b26e-4fe4-8cdf-f4437e625936" width="700"/>
+</p>
+<p align="center"><i><b>Figure 5</b> Youtube Video Banner</i></p>
+
+See the result of my JuaraAndroid Challenge in here...(https://github.com/patriciafiona/JuaraAndroid/tree/season_3_challenge/03.%20JuaraAndroid%202023%20-%20Compose%20Camp/Challenges)
+
 ## Submission App Result
 | Function      | Result Preview  | Function      | Result Preview  |
 | :-: | :-: | :-: | :-: | 
