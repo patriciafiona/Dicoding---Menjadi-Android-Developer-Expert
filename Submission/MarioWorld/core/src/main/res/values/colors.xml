@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="dark_grey">#292929</color>
+    <color name="grey">#898989</color>
+    <color name="light_grey">#DADADA</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="translucent_gray">#80E4E4E4</color>
+
+    <color name="mario_red">#E70112</color>
+    <color name="mario_red_dark">#8B0416</color>
+
+    <color name="bg_green">#3DDC4D</color>
+    <color name="bg_orange">#f89b29</color>
+</resources>

@@ -1,11 +1,11 @@
-import org.gradle.internal.impldep.bsh.commands.dir
-
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("kotlin-parcelize")
     id("kotlin-kapt")
 }
+
+apply ("../shared_dependencies.gradle")
 
 android {
     namespace = "com.patriciafiona.mario_world.core"
@@ -27,6 +27,11 @@ android {
             )
         }
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
