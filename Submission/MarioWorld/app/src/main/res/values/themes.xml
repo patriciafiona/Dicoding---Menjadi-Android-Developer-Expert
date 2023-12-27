@@ -2,7 +2,21 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.MarioWorld" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/mario_red</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/bg_orange</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/mario_red</item>
+    </style>
+
+    <style name="SlideToActView.GetStarted">
+        <item name="android:elevation" tools:ignore="NewApi">6dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_margin">8dp</item>
     </style>
 
     <style name="Theme.MarioWorld" parent="Base.Theme.MarioWorld" />

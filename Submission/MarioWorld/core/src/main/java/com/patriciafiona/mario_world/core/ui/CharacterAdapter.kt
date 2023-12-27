@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.patriciafiona.mario_world.core.domain.model.Character
 import com.patriciafiona.mario_world.core.R
 import com.patriciafiona.mario_world.core.databinding.ItemListCharacterBinding
@@ -15,7 +16,9 @@ import com.patriciafiona.mario_world.core.utils.MediaPlayerManager
 import com.patriciafiona.mario_world.core.utils.Utils.fadeVisibility
 import java.util.ArrayList
 
-class MarioAdapter(private val context: Context) : RecyclerView.Adapter<MarioAdapter.ListViewHolder>() {
+class CharacterAdapter(private val context: Context) : RecyclerView.Adapter<CharacterAdapter.ListViewHolder>() {
+
+    private val imageURL = "https://raw.githubusercontent.com/patriciafiona/patriciafiona.github.io/main/hosting/resouces/mario_world/"
 
     private var listData = ArrayList<Character>()
     var onItemClick: ((Character) -> Unit)? = null
@@ -47,7 +50,10 @@ class MarioAdapter(private val context: Context) : RecyclerView.Adapter<MarioAda
         fun bind(character: Character) {
             with(binding) {
                 Glide.with(itemView.context)
-                    .load(if (isExpand) character.imageOpen else character.imageClose)
+                    .load("$imageURL${if (isExpand) character.imageOpen else character.imageClose}")
+                    .placeholder(R.drawable.ic_image)
+                    .apply(RequestOptions().override(200, 200))
+                    .skipMemoryCache(true)
                     .into(ivPhoto)
 
                 tvName.text = character.name
@@ -55,14 +61,17 @@ class MarioAdapter(private val context: Context) : RecyclerView.Adapter<MarioAda
 
                 val bgColors = character.backgroundColor.split(",")
                 cardContainer.setCardBackgroundColor(
-                    Color.rgb(bgColors[0].toInt(), bgColors[1].toInt(), bgColors[2].toInt())
+                    Color.rgb(bgColors[0].trim().toInt(), bgColors[1].trim().toInt(), bgColors[2].trim().toInt())
                 )
 
                 btnExpand.setOnClickListener {
                     isExpand = !isExpand
 
                     Glide.with(itemView.context)
-                        .load(if (isExpand) character.imageOpen else character.imageClose)
+                        .load("$imageURL${if (isExpand) character.imageOpen else character.imageClose}")
+                        .placeholder(R.drawable.ic_image)
+                        .apply(RequestOptions().override(200, 200))
+                        .skipMemoryCache(true)
                         .into(ivPhoto)
 
                     btnExpand.setImageResource(if (isExpand) R.drawable.ic_arrow_up else R.drawable.ic_arrow_down)
