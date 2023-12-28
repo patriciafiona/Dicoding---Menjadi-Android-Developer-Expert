@@ -1,23 +1,23 @@
 package com.patriciafiona.marioworld.ui.detail
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.WindowManager
-import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.patriciafiona.mario_world.core.data.source.local.DummyDataSource.characterSoundLibrary
+import com.patriciafiona.mario_world.core.domain.model.Character
 import com.patriciafiona.mario_world.core.utils.MediaPlayerManager
+import com.patriciafiona.mario_world.core.utils.Utils.imageURL
 import com.patriciafiona.marioworld.databinding.ActivityDetailCharacterBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
-import com.patriciafiona.mario_world.core.domain.model.Character
-import com.patriciafiona.mario_world.core.utils.Utils.imageURL
-import com.patriciafiona.marioworld.R
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class DetailCharacterActivity : AppCompatActivity() {
@@ -31,6 +31,12 @@ class DetailCharacterActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_DATA = "extra_data"
+
+        fun intent(context: Context, data: Character): Intent{
+            val intent = Intent(context, DetailCharacterActivity::class.java)
+            intent.putExtra(EXTRA_DATA, data)
+            return intent
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +48,7 @@ class DetailCharacterActivity : AppCompatActivity() {
         bgSoundManager = MediaPlayerManager(applicationContext)
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "DiscouragedApi")
     private fun initView(){
         with(binding){
             val data: Character? = intent.extras!!.getParcelable(EXTRA_DATA)
@@ -66,7 +72,6 @@ class DetailCharacterActivity : AppCompatActivity() {
                 }
 
                 var statusFavorite = data.isFavorite
-                Log.e("IsFavorite", "status: $statusFavorite")
                 setStatusFavorite(statusFavorite)
                 actionFavorite.setOnClickListener {
                     statusFavorite = !statusFavorite
@@ -84,21 +89,28 @@ class DetailCharacterActivity : AppCompatActivity() {
                     .skipMemoryCache(true)
                     .into(ivPhoto)
 
+                //Set character sound
                 val characterSoundManager = MediaPlayerManager(applicationContext)
+
+                Log.e("SOUND", "NAME: ${data.sound01}")
+                val sound01: Int = characterSoundLibrary[data.sound01]!!
+                val sound02: Int = characterSoundLibrary[data.sound02]!!
+                val sound03: Int = characterSoundLibrary[data.sound03]!!
+
                 btnSound1.setColor(color)
-//                btnSound1.setOnClickListener {
-//                    characterSoundManager.startSound(data.characterSound[0])
-//                }
+                btnSound1.setOnClickListener {
+                    characterSoundManager.startSound(sound01)
+                }
 
                 btnSound2.setColor(color)
-//                btnSound2.setOnClickListener {
-//                    characterSoundManager.startSound(data.characterSound[1])
-//                }
+                btnSound2.setOnClickListener {
+                    characterSoundManager.startSound(sound02)
+                }
 
                 btnSound3.setColor(color)
-//                btnSound3.setOnClickListener {
-//                    characterSoundManager.startSound(data.characterSound[2])
-//                }
+                btnSound3.setOnClickListener {
+                    characterSoundManager.startSound(sound03)
+                }
 
                 accelerationRating.rating = (data.acceleration / 2.0).toFloat()
                 maxSpeedRating.rating = (data.maxSpeed / 2.0).toFloat()

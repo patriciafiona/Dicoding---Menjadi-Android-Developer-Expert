@@ -3,8 +3,8 @@ package com.patriciafiona.marioworld.ui.onboarding
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.Configuration
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.ncorti.slidetoact.SlideToActView
 import com.patriciafiona.mario_world.core.utils.MediaPlayerManager
 import com.patriciafiona.marioworld.databinding.ActivityOnboardingBinding

@@ -45,4 +45,14 @@ data class Character(
     @IgnoredOnParcel
     val bgColorB: Int = bgColors[2].trim().toInt()
 
+    //Convert character sounds value & Set into variable
+    @IgnoredOnParcel
+    private val characterSounds = characterSound.split(",")
+
+    @IgnoredOnParcel
+    val sound01 = characterSounds[0].trim()
+    @IgnoredOnParcel
+    val sound02 = characterSounds[1].trim()
+    @IgnoredOnParcel
+    val sound03 = characterSounds[2].trim()
 }

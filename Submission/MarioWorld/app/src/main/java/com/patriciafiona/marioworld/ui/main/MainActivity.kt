@@ -3,37 +3,34 @@ package com.patriciafiona.marioworld.ui.main
 import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
-import android.nfc.NfcAdapter.EXTRA_DATA
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.patriciafiona.mario_world.core.data.Resource
 import com.patriciafiona.mario_world.core.ui.CharacterAdapter
 import com.patriciafiona.mario_world.core.ui.NewsAdapter
 import com.patriciafiona.mario_world.core.utils.MediaPlayerManager
-import com.patriciafiona.marioworld.R
 import com.patriciafiona.marioworld.databinding.ActivityMainBinding
 import com.patriciafiona.marioworld.ui.detail.DetailCharacterActivity
+import com.patriciafiona.marioworld.ui.favorite.FavoriteActivity
 import com.patriciafiona.marioworld.ui.profile.ProfileActivity
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.runBlocking
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
+    private lateinit var bgSoundManager: MediaPlayerManager
     private lateinit var sharedPrefs: SharedPreferences
     private val mainViewModel: MainViewModel by viewModel()
 
     private val TAG: String = "MainActivityLog"
 
     var doubleBackToExitPressedOnce = false
-
-    private lateinit var bgSoundManager: MediaPlayerManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +47,10 @@ class MainActivity : AppCompatActivity() {
             btnProfile.setOnClickListener {
                 val intent = Intent(this@MainActivity, ProfileActivity::class.java)
                 startActivity(intent)
+            }
+
+            btnFavorite.setOnClickListener {
+                startActivity(FavoriteActivity.intent(this@MainActivity))
             }
 
             rvNews.setHasFixedSize(true)
@@ -141,9 +142,7 @@ class MainActivity : AppCompatActivity() {
             rvCharacters.layoutManager = LinearLayoutManager(this@MainActivity)
             val listCharactersAdapter = CharacterAdapter(this@MainActivity)
             listCharactersAdapter.onItemClick = { selectedData ->
-                val intent = Intent(this@MainActivity, DetailCharacterActivity::class.java)
-                intent.putExtra(DetailCharacterActivity.EXTRA_DATA, selectedData)
-                startActivity(intent)
+                startActivity(DetailCharacterActivity.intent(this@MainActivity, selectedData))
             }
 
             mainViewModel.characters.observe(this@MainActivity) { characters ->
@@ -151,19 +150,19 @@ class MainActivity : AppCompatActivity() {
                     when (characters) {
                         is Resource.Loading -> {
                             binding.loadingCharacter.visibility = View.VISIBLE
-                            Log.e(TAG, "Loading!!!")
                         }
                         is Resource.Success -> {
                             binding.loadingCharacter.visibility = View.GONE
-                            Log.e(TAG, "Success!!!")
                             listCharactersAdapter.setData(characters.data)
                         }
 
                         is Resource.Error -> {
                             binding.loadingCharacter.visibility = View.GONE
-                            Log.e(TAG, "Error!!!")
-//                            binding.viewError.root.visibility = View.VISIBLE
-//                            binding.viewError.tvError.text = tourism.message ?: getString(R.string.something_wrong)
+                            Toast.makeText(
+                                this@MainActivity,
+                                "Can't get the characters data!",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
 
                         else -> {}
@@ -171,25 +170,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             rvCharacters.adapter = listCharactersAdapter
-
-//            listCharactersAdapter.setOnItemClickCallback(object : CharacterAdapter.OnItemClickCallback {
-//                override fun onItemClicked(data: Character) {
-//                    runBlocking {
-//                        //play click sound
-//                        bgSoundManager.stopSound()
-//
-//                        val mpManager = MediaPlayerManager(applicationContext)
-//                        mpManager.startSound(com.patriciafiona.mario_world.core.R.raw.continue_sound, false)
-//
-//                        delay(100)
-//
-//                        //Go to Detail Page
-//                        val intent = Intent(this@MainActivity, DetailActivity::class.java)
-//                        intent.putExtra("character", data)
-//                        startActivity(intent)
-//                    }
-//                }
-//            })
         }
     }
 }

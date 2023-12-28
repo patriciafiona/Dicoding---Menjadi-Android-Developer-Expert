@@ -50,16 +50,35 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintWidth_percent=".6" />
 
-            <ImageButton
-                android:id="@+id/btn_favorite"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+            <androidx.cardview.widget.CardView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:layout_marginStart="16dp"
-                android:background="@null"
-                android:src="@drawable/ic_volume_up"
+                app:cardBackgroundColor="@color/dark_grey"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="5dp"
                 app:layout_constraintBottom_toBottomOf="@+id/btn_profile"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/btn_profile" />
+                app:layout_constraintTop_toTopOf="@+id/btn_profile">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:id="@+id/btn_favorite"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@null"
+                        android:src="@drawable/ic_favorite_border_white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
 
             <ImageButton
                 android:id="@+id/btn_sound"
@@ -122,7 +141,7 @@
                     android:fontFamily="@font/super_mario_256"
                     android:text="@string/news"
                     android:textColor="@color/white"
-                    android:textSize="30sp"
+                    android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView4"
                     app:layout_constraintStart_toEndOf="@+id/imageView4"
                     app:layout_constraintTop_toTopOf="@+id/imageView4" />
@@ -168,7 +187,7 @@
                 android:fontFamily="@font/super_mario_256"
                 android:text="@string/characters"
                 android:textColor="@color/white"
-                android:textSize="30sp"
+                android:textSize="24sp"
                 app:layout_constraintStart_toEndOf="@+id/imageView5"
                 app:layout_constraintTop_toTopOf="@+id/imageView5" />
 

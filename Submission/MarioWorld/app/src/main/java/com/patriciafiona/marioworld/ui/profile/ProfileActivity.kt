@@ -1,8 +1,7 @@
 package com.patriciafiona.marioworld.ui.profile
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.patriciafiona.marioworld.R
+import androidx.appcompat.app.AppCompatActivity
 import com.patriciafiona.marioworld.databinding.ActivityProfileBinding
 
 class ProfileActivity : AppCompatActivity() {

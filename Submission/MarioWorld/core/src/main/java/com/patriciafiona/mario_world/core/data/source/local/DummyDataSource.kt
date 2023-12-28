@@ -29,4 +29,62 @@ object DummyDataSource {
             )
         )
     }
+
+    val characterSoundLibrary = mapOf(
+        "sound_mario_0" to R.raw.sound_mario_0,
+        "sound_mario_1" to R.raw.sound_mario_1,
+        "sound_mario_2" to R.raw.sound_mario_2,
+
+        "sound_luigi_0" to R.raw.sound_luigi_0,
+        "sound_luigi_1" to R.raw.sound_luigi_1,
+        "sound_luigi_2" to R.raw.sound_luigi_2,
+
+        "sound_peach_0" to R.raw.sound_peach_0,
+        "sound_peach_1" to R.raw.sound_peach_1,
+        "sound_peach_2" to R.raw.sound_peach_2,
+
+        "sound_toad_0" to R.raw.sound_toad_0,
+        "sound_toad_1" to R.raw.sound_toad_1,
+        "sound_toad_2" to R.raw.sound_toad_2,
+
+        "sound_bowser_0" to R.raw.sound_bowser_0,
+        "sound_bowser_1" to R.raw.sound_bowser_1,
+        "sound_bowser_2" to R.raw.sound_bowser_2,
+
+        "sound_yoshi_0" to R.raw.sound_yoshi_0,
+        "sound_yoshi_1" to R.raw.sound_yoshi_1,
+        "sound_yoshi_2" to R.raw.sound_yoshi_2,
+
+        "sound_daisy_0" to R.raw.sound_daisy_0,
+        "sound_daisy_1" to R.raw.sound_daisy_1,
+        "sound_daisy_2" to R.raw.sound_daisy_2,
+
+        "sound_wario_0" to R.raw.sound_wario_0,
+        "sound_wario_1" to R.raw.sound_wario_1,
+        "sound_wario_2" to R.raw.sound_wario_2,
+
+        "sound_waluigi_0" to R.raw.sound_waluigi_0,
+        "sound_waluigi_1" to R.raw.sound_waluigi_1,
+        "sound_waluigi_2" to R.raw.sound_waluigi_2,
+
+        "sound_rosalina_0" to R.raw.sound_rosalina_0,
+        "sound_rosalina_1" to R.raw.sound_rosalina_1,
+        "sound_rosalina_2" to R.raw.sound_rosalina_2,
+
+        "sound_bowser_jr_0" to R.raw.sound_bowser_jr_0,
+        "sound_bowser_jr_1" to R.raw.sound_bowser_jr_1,
+        "sound_bowser_jr_2" to R.raw.sound_bowser_jr_2,
+
+        "sound_boo_0" to R.raw.sound_boo_0,
+        "sound_boo_1" to R.raw.sound_boo_1,
+        "sound_boo_2" to R.raw.sound_boo_2,
+
+        "sound_donkey_kong_0" to R.raw.sound_donkey_kong_0,
+        "sound_donkey_kong_1" to R.raw.sound_donkey_kong_1,
+        "sound_donkey_kong_2" to R.raw.sound_donkey_kong_2,
+
+        "sound_diddy_kong_0" to R.raw.sound_diddy_kong_0,
+        "sound_diddy_kong_1" to R.raw.sound_diddy_kong_1,
+        "sound_diddy_kong_2" to R.raw.sound_diddy_kong_2,
+    )
 }

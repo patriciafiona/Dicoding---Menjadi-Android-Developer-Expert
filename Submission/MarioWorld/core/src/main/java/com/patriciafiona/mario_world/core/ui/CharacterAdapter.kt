@@ -9,13 +9,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.patriciafiona.mario_world.core.domain.model.Character
 import com.patriciafiona.mario_world.core.R
 import com.patriciafiona.mario_world.core.databinding.ItemListCharacterBinding
+import com.patriciafiona.mario_world.core.domain.model.Character
 import com.patriciafiona.mario_world.core.utils.MediaPlayerManager
 import com.patriciafiona.mario_world.core.utils.Utils.fadeVisibility
 import com.patriciafiona.mario_world.core.utils.Utils.imageURL
-import java.util.ArrayList
 
 class CharacterAdapter(private val context: Context) : RecyclerView.Adapter<CharacterAdapter.ListViewHolder>() {
 

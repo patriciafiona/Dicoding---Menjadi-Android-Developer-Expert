@@ -1,8 +1,8 @@
 package com.patriciafiona.mario_world.core.utils
 
-import com.patriciafiona.mario_world.core.domain.model.Character
 import com.patriciafiona.mario_world.core.data.source.local.entity.CharacterEntity
 import com.patriciafiona.mario_world.core.data.source.remote.response.CharacterResponse
+import com.patriciafiona.mario_world.core.domain.model.Character
 
 object DataMapper {
     fun mapResponsesToEntities(input: List<CharacterResponse>): List<CharacterEntity> {

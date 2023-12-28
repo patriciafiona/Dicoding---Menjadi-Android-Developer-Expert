@@ -1,8 +1,8 @@
 package com.patriciafiona.mario_world.core.domain.repository
 
 import com.patriciafiona.mario_world.core.data.Resource
-import kotlinx.coroutines.flow.Flow
 import com.patriciafiona.mario_world.core.domain.model.Character
+import kotlinx.coroutines.flow.Flow
 
 interface IMarioRepository {
 
