@@ -1,7 +1,7 @@
 package com.dicoding.tourismapp.core.di
 
 import androidx.room.Room
-import com.dicoding.tourismapp.core.data.MarioRepository
+import com.dicoding.tourismapp.core.data.TourismRepository
 import com.dicoding.tourismapp.core.data.source.local.LocalDataSource
 import com.dicoding.tourismapp.core.data.source.local.room.TourismDatabase
 import com.dicoding.tourismapp.core.data.source.remote.RemoteDataSource
@@ -49,7 +49,7 @@ val repositoryModule = module {
     single { RemoteDataSource(get()) }
     factory { AppExecutors() }
     single<ITourismRepository> {
-        MarioRepository(
+        TourismRepository(
             get(),
             get(),
             get()

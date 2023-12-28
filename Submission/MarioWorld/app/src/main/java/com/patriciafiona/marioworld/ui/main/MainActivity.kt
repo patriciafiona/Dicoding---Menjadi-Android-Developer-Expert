@@ -3,6 +3,7 @@ package com.patriciafiona.marioworld.ui.main
 import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
+import android.nfc.NfcAdapter.EXTRA_DATA
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -17,6 +18,7 @@ import com.patriciafiona.mario_world.core.ui.NewsAdapter
 import com.patriciafiona.mario_world.core.utils.MediaPlayerManager
 import com.patriciafiona.marioworld.R
 import com.patriciafiona.marioworld.databinding.ActivityMainBinding
+import com.patriciafiona.marioworld.ui.detail.DetailCharacterActivity
 import com.patriciafiona.marioworld.ui.profile.ProfileActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
@@ -138,6 +140,11 @@ class MainActivity : AppCompatActivity() {
         with(binding) {
             rvCharacters.layoutManager = LinearLayoutManager(this@MainActivity)
             val listCharactersAdapter = CharacterAdapter(this@MainActivity)
+            listCharactersAdapter.onItemClick = { selectedData ->
+                val intent = Intent(this@MainActivity, DetailCharacterActivity::class.java)
+                intent.putExtra(DetailCharacterActivity.EXTRA_DATA, selectedData)
+                startActivity(intent)
+            }
 
             mainViewModel.characters.observe(this@MainActivity) { characters ->
                 if (characters != null) {

@@ -31,6 +31,9 @@ data class CharacterResponse(
     val backgroundColor: String, //R, G, B
 
     @field:SerializedName("ability")
-    val ability: String
+    val ability: String,
+
+    @field:SerializedName("characterSound")
+    val characterSound: String,
 )
 

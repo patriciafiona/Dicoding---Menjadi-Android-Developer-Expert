@@ -14,11 +14,10 @@ import com.patriciafiona.mario_world.core.R
 import com.patriciafiona.mario_world.core.databinding.ItemListCharacterBinding
 import com.patriciafiona.mario_world.core.utils.MediaPlayerManager
 import com.patriciafiona.mario_world.core.utils.Utils.fadeVisibility
+import com.patriciafiona.mario_world.core.utils.Utils.imageURL
 import java.util.ArrayList
 
 class CharacterAdapter(private val context: Context) : RecyclerView.Adapter<CharacterAdapter.ListViewHolder>() {
-
-    private val imageURL = "https://raw.githubusercontent.com/patriciafiona/patriciafiona.github.io/main/hosting/resouces/mario_world/"
 
     private var listData = ArrayList<Character>()
     var onItemClick: ((Character) -> Unit)? = null
@@ -59,9 +58,8 @@ class CharacterAdapter(private val context: Context) : RecyclerView.Adapter<Char
                 tvName.text = character.name
                 tvDesc.text = character.description
 
-                val bgColors = character.backgroundColor.split(",")
                 cardContainer.setCardBackgroundColor(
-                    Color.rgb(bgColors[0].trim().toInt(), bgColors[1].trim().toInt(), bgColors[2].trim().toInt())
+                    Color.rgb(character.bgColorR, character.bgColorG, character.bgColorB)
                 )
 
                 btnExpand.setOnClickListener {
@@ -100,7 +98,7 @@ class CharacterAdapter(private val context: Context) : RecyclerView.Adapter<Char
         }
 
         init {
-            binding.root.setOnClickListener {
+            binding.btnSeeDetail.setOnClickListener {
                 onItemClick?.invoke(listData[adapterPosition])
             }
         }

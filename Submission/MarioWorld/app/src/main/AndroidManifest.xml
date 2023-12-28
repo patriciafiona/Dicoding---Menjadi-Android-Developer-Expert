@@ -16,6 +16,9 @@
         android:theme="@style/Theme.MarioWorld"
         tools:targetApi="34">
         <activity
+            android:name=".ui.detail.DetailCharacterActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.profile.ProfileActivity"
             android:exported="false" />
         <activity

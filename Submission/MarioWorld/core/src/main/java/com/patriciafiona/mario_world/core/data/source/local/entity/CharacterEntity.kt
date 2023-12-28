@@ -39,6 +39,9 @@ data class CharacterEntity(
     @ColumnInfo(name = "ability")
     val ability: String,
 
+    @ColumnInfo(name = "characterSound")
+    val characterSound: String,
+
     @ColumnInfo(name = "isFavorite")
     var isFavorite: Boolean = false
 )

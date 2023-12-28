@@ -13,12 +13,13 @@ object DataMapper {
                 fullName = it.fullName,
                 dialog = it.dialog,
                 species = it.species,
-                description = it.species,
+                description = it.description,
                 imageOpen = it.imageOpen,
                 imageClose = it.imageClose,
                 imageFull = it.imageFull,
                 backgroundColor = it.backgroundColor, //R, G, B
                 ability = it.ability,
+                characterSound = it.characterSound,
                 isFavorite = false
             )
             characterList.add(character)
@@ -39,6 +40,7 @@ object DataMapper {
                 imageFull = it.imageFull,
                 backgroundColor = it.backgroundColor, //R, G, B
                 ability = it.ability,
+                characterSound = it.characterSound,
                 isFavorite = it.isFavorite
             )
         }
@@ -48,12 +50,13 @@ object DataMapper {
         fullName = it.fullName,
         dialog = it.dialog,
         species = it.species,
-        description = it.species,
+        description = it.description,
         imageOpen = it.imageOpen,
         imageClose = it.imageClose,
         imageFull = it.imageFull,
         backgroundColor = it.backgroundColor, //R, G, B
         ability = it.ability,
+        characterSound = it.characterSound,
         isFavorite = it.isFavorite
     )
 }

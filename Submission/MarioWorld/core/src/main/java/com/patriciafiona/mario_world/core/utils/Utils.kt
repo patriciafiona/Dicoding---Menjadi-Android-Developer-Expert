@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 
 object Utils {
+
+    val imageURL = "https://raw.githubusercontent.com/patriciafiona/patriciafiona.github.io/main/hosting/resouces/mario_world/"
     fun View.fadeVisibility(visibility: Int, duration: Long = 400) {
         val transition: Transition = Fade()
         transition.duration = duration

@@ -51,6 +51,17 @@
                 app:layout_constraintWidth_percent=".6" />
 
             <ImageButton
+                android:id="@+id/btn_favorite"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:background="@null"
+                android:src="@drawable/ic_volume_up"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btn_profile" />
+
+            <ImageButton
                 android:id="@+id/btn_sound"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
