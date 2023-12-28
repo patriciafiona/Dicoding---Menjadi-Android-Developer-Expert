@@ -37,7 +37,7 @@
             android:fontFamily="@font/super_mario_256"
             android:text="@string/character_template"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/iv_photo"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent=".45" />
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:ellipsize="end"
-            android:maxLines="3"
+            android:maxLines="2"
             android:text="@string/paragraph_template"
             android:textColor="@color/white"
             android:textSize="12sp"
