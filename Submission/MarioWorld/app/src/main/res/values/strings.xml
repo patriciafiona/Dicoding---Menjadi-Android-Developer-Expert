@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Mario World</string>
     <string name="favorite">Favorite</string>
+    <string name="title_favorite">Favorite</string>
 </resources>

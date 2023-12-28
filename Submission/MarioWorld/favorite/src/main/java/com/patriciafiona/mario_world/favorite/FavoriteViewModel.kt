@@ -1,4 +1,4 @@
-package com.patriciafiona.marioworld.ui.favorite
+package com.patriciafiona.mario_world.favorite
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData

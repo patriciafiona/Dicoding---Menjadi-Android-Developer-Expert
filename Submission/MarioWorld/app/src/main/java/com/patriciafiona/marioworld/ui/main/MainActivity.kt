@@ -17,7 +17,6 @@ import com.patriciafiona.mario_world.core.ui.NewsAdapter
 import com.patriciafiona.mario_world.core.utils.MediaPlayerManager
 import com.patriciafiona.marioworld.databinding.ActivityMainBinding
 import com.patriciafiona.marioworld.ui.detail.DetailCharacterActivity
-import com.patriciafiona.marioworld.ui.favorite.FavoriteActivity
 import com.patriciafiona.marioworld.ui.profile.ProfileActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -50,7 +49,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             btnFavorite.setOnClickListener {
-                startActivity(FavoriteActivity.intent(this@MainActivity))
+                val uri = Uri.parse("mario_world_favorite://favorite")
+                startActivity(Intent(Intent.ACTION_VIEW, uri))
             }
 
             rvNews.setHasFixedSize(true)

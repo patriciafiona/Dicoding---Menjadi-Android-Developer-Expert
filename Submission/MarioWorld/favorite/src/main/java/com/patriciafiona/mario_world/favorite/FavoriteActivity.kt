@@ -1,4 +1,4 @@
-package com.patriciafiona.marioworld.ui.favorite
+package com.patriciafiona.mario_world.favorite
 
 import android.content.Context
 import android.content.Intent
@@ -9,11 +9,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.patriciafiona.mario_world.core.ui.CharacterAdapter
 import com.patriciafiona.mario_world.core.utils.MediaPlayerManager
-import com.patriciafiona.marioworld.databinding.ActivityFavoriteBinding
+import com.patriciafiona.mario_world.favorite.databinding.ActivityFavoriteBinding
 import com.patriciafiona.marioworld.ui.detail.DetailCharacterActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.core.context.loadKoinModules
 
 class FavoriteActivity : AppCompatActivity() {
 
@@ -24,16 +25,12 @@ class FavoriteActivity : AppCompatActivity() {
 
     private val favoriteViewModel: FavoriteViewModel by viewModel()
 
-    companion object{
-        fun intent(context: Context): Intent{
-            return Intent(context, FavoriteActivity::class.java)
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFavoriteBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        loadKoinModules(favoriteModule)
 
         sharedPrefs = getSharedPreferences("com.patriciafiona.marioworld", MODE_PRIVATE)
         bgSoundManager = MediaPlayerManager(applicationContext)

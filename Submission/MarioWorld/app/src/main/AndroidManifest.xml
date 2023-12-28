@@ -16,7 +16,7 @@
         android:theme="@style/Theme.MarioWorld"
         tools:targetApi="34">
         <activity
-            android:name=".ui.favorite.FavoriteActivity"
+            android:name="com.patriciafiona.mario_world.favorite.FavoriteActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
         <activity

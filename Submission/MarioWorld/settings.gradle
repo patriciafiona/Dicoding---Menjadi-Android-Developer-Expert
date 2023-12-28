@@ -18,3 +18,4 @@ dependencyResolutionManagement {
 rootProject.name = "Mario World"
 include ':app'
 include ':core'
+include ':favorite'
