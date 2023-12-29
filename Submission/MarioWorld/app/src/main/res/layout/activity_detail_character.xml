@@ -29,7 +29,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent=".4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/character_image" />
 
     <ImageButton
         android:id="@+id/btn_back"
@@ -40,7 +41,8 @@
         android:background="@null"
         android:src="@drawable/ic_arrow_back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/back_button" />
 
     <ImageButton
         android:id="@+id/btn_sound"
@@ -51,7 +53,8 @@
         android:background="@null"
         android:src="@drawable/ic_volume_up"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/sound_button" />
 
     <ImageButton
         android:id="@+id/action_favorite"
@@ -62,7 +65,8 @@
         android:background="@null"
         android:src="@drawable/ic_favorite_border_white"
         app:layout_constraintEnd_toStartOf="@+id/action_share"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/favorite_button" />
 
     <ImageButton
         android:id="@+id/action_share"
@@ -73,7 +77,8 @@
         android:background="@null"
         android:src="@drawable/ic_share"
         app:layout_constraintEnd_toStartOf="@+id/btn_sound"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/share_button" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -126,7 +131,8 @@
                 android:src="@drawable/pipe_right"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_full_name_and_species"
-                app:layout_constraintWidth_percent=".2" />
+                app:layout_constraintWidth_percent=".2"
+                android:contentDescription="@string/pipe_image" />
 
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -183,6 +189,7 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 android:src="@drawable/pipe_left"
+                android:contentDescription="@string/pipe_image"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_full_name_and_species"
                 app:layout_constraintWidth_percent=".2" />
@@ -195,7 +202,8 @@
                 android:layout_marginTop="32dp"
                 android:src="@drawable/star_foreground"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/pipe_left" />
+                app:layout_constraintTop_toBottomOf="@+id/pipe_left"
+                android:contentDescription="@string/title_icon" />
 
             <TextView
                 android:id="@+id/textView"
@@ -368,7 +376,8 @@
                 android:layout_marginTop="32dp"
                 android:src="@drawable/icon_02"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+                app:layout_constraintTop_toBottomOf="@+id/textView10"
+                android:contentDescription="@string/title_icon" />
 
             <TextView
                 android:id="@+id/textView11"
@@ -412,7 +421,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_description"
-                app:layout_constraintWidth_percent=".3" />
+                app:layout_constraintWidth_percent=".3"
+                android:contentDescription="@string/lakitu_image" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="0dp"

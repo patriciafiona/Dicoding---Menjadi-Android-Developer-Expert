@@ -2,4 +2,17 @@
     <string name="app_name">Mario World</string>
     <string name="favorite">Favorite</string>
     <string name="title_favorite">Favorite</string>
+    <string name="character_image">character image</string>
+    <string name="back_button">back button</string>
+    <string name="sound_button">sound button</string>
+    <string name="favorite_button">favorite button</string>
+    <string name="share_button">share button</string>
+    <string name="pipe_image">pipe image</string>
+    <string name="title_icon">title icon</string>
+    <string name="lakitu_image">lakitu image</string>
+    <string name="patter_background">patter background</string>
+    <string name="luigi_header_image">luigi header image</string>
+    <string name="mario_header_image">mario header image</string>
+    <string name="mario_onboarding_image">mario onboarding image</string>
+    <string name="mario_title">mario title</string>
 </resources>

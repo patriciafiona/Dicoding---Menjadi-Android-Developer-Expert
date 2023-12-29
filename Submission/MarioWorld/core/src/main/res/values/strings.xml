@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MarioWorld</string>
     <string name="news">News</string>
+    <string name="double_press_exit">Please click BACK again to exit</string>
     <string name="date_template">01.12.2023</string>
     <string name="paragraph_template">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
     <string name="title_template">Title here</string>
@@ -24,4 +25,7 @@
     <string name="since_value">2019</string>
     <string name="academy">Academy</string>
     <string name="academy_value">21</string>
+    <string name="circle_ring_image">circle ring image</string>
+    <string name="character_image">character image</string>
+    <string name="card_indicator_arrow">card indicator arrow</string>
 </resources>

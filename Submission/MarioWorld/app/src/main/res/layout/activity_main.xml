@@ -17,7 +17,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/patter_background" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -36,7 +37,8 @@
                 android:src="@drawable/header_luigi"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintWidth_percent=".5" />
+                app:layout_constraintWidth_percent=".5"
+                android:contentDescription="@string/luigi_header_image" />
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -48,7 +50,8 @@
                 android:src="@drawable/header_mario"
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent=".6" />
+                app:layout_constraintWidth_percent=".6"
+                android:contentDescription="@string/mario_header_image" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="35dp"
@@ -74,7 +77,8 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:contentDescription="@string/favorite_button" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -89,7 +93,8 @@
                 android:src="@drawable/ic_volume_up"
                 app:layout_constraintBottom_toBottomOf="@+id/btn_profile"
                 app:layout_constraintEnd_toStartOf="@+id/btn_profile"
-                app:layout_constraintTop_toTopOf="@+id/btn_profile" />
+                app:layout_constraintTop_toTopOf="@+id/btn_profile"
+                android:contentDescription="@string/sound_button" />
 
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/btn_profile"
@@ -131,7 +136,8 @@
                     android:layout_marginTop="32dp"
                     android:src="@drawable/star_foreground"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/title_icon" />
 
                 <TextView
                     android:id="@+id/textView"
@@ -177,7 +183,8 @@
                 android:layout_marginTop="32dp"
                 android:src="@drawable/star_foreground"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+                android:contentDescription="@string/title_icon" />
 
             <TextView
                 android:id="@+id/textView2"

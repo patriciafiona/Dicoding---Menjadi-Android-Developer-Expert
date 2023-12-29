@@ -6,6 +6,8 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.Nullable
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -16,6 +18,42 @@ import com.patriciafiona.mario_world.core.utils.MediaPlayerManager
 import com.patriciafiona.mario_world.core.utils.Utils.fadeVisibility
 import com.patriciafiona.mario_world.core.utils.Utils.imageURL
 
+
+class CharacterDiffCallback(oldCharacterList: List<Character>, newCharacterList: List<Character>) :
+    DiffUtil.Callback() {
+    private val mOldCharacterList: List<Character>
+    private val mNewCharacterList: List<Character>
+
+    init {
+        mOldCharacterList = oldCharacterList
+        mNewCharacterList = newCharacterList
+    }
+
+    override fun getOldListSize(): Int {
+        return mOldCharacterList.size
+    }
+
+    override fun getNewListSize(): Int {
+        return mNewCharacterList.size
+    }
+
+    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+        return mOldCharacterList[oldItemPosition].name === mNewCharacterList[newItemPosition].name
+    }
+
+    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+        val oldCharacter: Character = mOldCharacterList[oldItemPosition]
+        val newCharacter: Character = mNewCharacterList[newItemPosition]
+        return oldCharacter.name.equals(newCharacter.name) && oldCharacter.isFavorite == newCharacter.isFavorite
+    }
+
+    @Nullable
+    override fun getChangePayload(oldItemPosition: Int, newItemPosition: Int): Any? {
+        // Implement method if you're going to use ItemAnimator
+        return super.getChangePayload(oldItemPosition, newItemPosition)
+    }
+}
+
 class CharacterAdapter(private val context: Context) : RecyclerView.Adapter<CharacterAdapter.ListViewHolder>() {
 
     private var listData = ArrayList<Character>()
@@ -23,9 +61,14 @@ class CharacterAdapter(private val context: Context) : RecyclerView.Adapter<Char
 
     fun setData(newListData: List<Character>?) {
         if (newListData == null) return
+
+        val diffCallback = CharacterDiffCallback(listData, newListData)
+        val diffCourses = DiffUtil.calculateDiff(diffCallback)
+
         listData.clear()
         listData.addAll(newListData)
-        notifyDataSetChanged()
+
+        diffCourses.dispatchUpdatesTo(this)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =

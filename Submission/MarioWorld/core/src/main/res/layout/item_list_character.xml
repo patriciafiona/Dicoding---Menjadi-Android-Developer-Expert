@@ -26,7 +26,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintWidth_percent=".5" />
+            app:layout_constraintWidth_percent=".5"
+            android:contentDescription="@string/character_image" />
 
         <TextView
             android:id="@+id/tv_name"
@@ -51,7 +52,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/tv_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_name"
-            app:layout_constraintTop_toTopOf="@+id/tv_name" />
+            app:layout_constraintTop_toTopOf="@+id/tv_name"
+            android:contentDescription="@string/card_indicator_arrow" />
 
         <TextView
             android:id="@+id/tv_desc"
